@@ -37,14 +37,14 @@ class Event:
         self.endTime = self.frontEnd.input_date()
         print()
         check = self.schedule.check_conflicts(self)
-        if (check):
+        if check:
             self.schedule.add_event(self)
         return check
 
     def alert(self):
         now = datetime.now()
         timeToEvent = (self.getStartTime() - now)
-        toMinutes = timeToEvent.seconds/60
+        toMinutes = round(timeToEvent.seconds / 60)
         hasEnded = (self.getEndTime() - now).seconds < 0
-        if toMinutes < (self.getTravelTime() + 5) & hasEnded == False:
-            print(self.getTitle() + " will start in " + toMinutes + " minutes")
+        if (toMinutes < (self.getTravelTime() + 5)) & (hasEnded == False):
+            print(f"{self.getTitle()} will start in {toMinutes} minutes")
