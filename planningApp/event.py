@@ -29,16 +29,16 @@ class Event:
         return self.travelTime
 
     def reschedule(self):
-        self.schedule.deleteEvent(self)
+        self.schedule.delete_event(self)
         print("Start Time ")
-        self.startTime = self.frontEnd.inputDate()
+        self.startTime = self.frontEnd.input_date()
         print()
         print("End Time ")
-        self.endTime = self.frontEnd.inputDate()
+        self.endTime = self.frontEnd.input_date()
         print()
-        check = self.schedule.checkConflicts(self)
+        check = self.schedule.check_conflicts(self)
         if (check):
-            self.schedule.addEvent(self)
+            self.schedule.add_event(self)
         return check
 
     def alert(self):
