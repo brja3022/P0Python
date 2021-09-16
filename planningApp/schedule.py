@@ -16,11 +16,9 @@ class Schedule:
     def check_conflicts(self, event):
         event_cleared = True
         for e in self.list_events:
-            print(event.getStartTime())
-            print(event.getEndTime())
-            print(e.getStartTime())
-            print(e.getEndTime())
-            if ((event.getEndTime()-(e.getStartTime())).seconds < 0) | ((event.getStartTime()-(e.getEndTime())).seconds > 0):
+            new_to_old = event.getStartTime()-e.getEndTime()
+            old_to_new = event.getEndTime()-e.getStartTime()
+            if (old_to_new.days < 0) | (new_to_old.days > 0):
                 continue
             else:
                 event_cleared = self.resolve_conflict(event, e)

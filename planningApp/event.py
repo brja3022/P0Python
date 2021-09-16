@@ -46,5 +46,5 @@ class Event:
         timeToEvent = (self.getStartTime() - now)
         toMinutes = round(timeToEvent.seconds / 60)
         hasEnded = (self.getEndTime() - now).seconds < 0
-        if (toMinutes < (self.getTravelTime() + 5)) & (hasEnded == False):
+        if (timeToEvent.days < 1) & (toMinutes < (self.getTravelTime() + 5)) & (hasEnded == False):
             print(f"{self.getTitle()} will start in {toMinutes} minutes")
