@@ -6,11 +6,11 @@ from event import *
 class FrontEnd:
 
     def input_date(self):
-        year = int(input("year"))
-        month = int(input("month"))
-        day = int(input("day"))
-        hour = int(input("hour"))
-        minute = int(input("minute"))
+        year = int(input("year "))
+        month = int(input("month "))
+        day = int(input("day "))
+        hour = int(input("hour "))
+        minute = int(input("minute "))
         #date_time_str = input("Input date in format dd/mm/yyyy HH:MM:SS ")
         #date_time_obj = datetime.strptime(date_time_str, '%d/%m/%y %H:%M:%S')
         date_time_obj = datetime(year, month, day, hour, minute)

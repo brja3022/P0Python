@@ -3,7 +3,7 @@ from schedule import *
 from event import *
 
 print("Welcome to Brian's Planning Application")
-name = input("Insert Name")
+name = input("Insert Name ")
 print()
 schedule = Schedule(name)
 frontEnd = FrontEnd()
